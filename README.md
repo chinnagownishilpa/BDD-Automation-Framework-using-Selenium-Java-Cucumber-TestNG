@@ -129,6 +129,8 @@ src
 
 
 ---
+## Sample Execution Report
+![Extent Report](docs/screenshots/extent-report.png)
 
 
 
