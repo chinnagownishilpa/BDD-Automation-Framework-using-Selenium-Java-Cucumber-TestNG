@@ -1,26 +1,22 @@
-\# BDD Automation Framework using Selenium, Java, Cucumber, TestNG
+\# BDD Automation Framework using Selenium, Java, Cucumber \& TestNG
 
 
 
-\## Project Overview
+\## Overview
 
-This project is a Behavior Driven Development (BDD) based automation framework designed to automate functional test scenarios for a web application.
-
-The framework uses Cucumber for readable test scenarios written in Gherkin syntax and Selenium WebDriver for browser automation.
+This repository contains an enterprise-ready BDD automation framework designed to automate web application testing using Selenium WebDriver and Cucumber BDD.
 
 
 
-The goal of this project is to demonstrate a scalable, maintainable, and industry standard automation framework suitable for real world QA automation projects.
+The framework demonstrates real-world QA automation practices such as clean architecture, separation of concerns, reusable components, centralized reporting, and CI/CD readiness. It reflects production-level automation frameworks used in insurance and financial domain applications.
 
 
 
-\## Application Under Test
-
-Demo web application used for automation practice and framework demonstration.
+---
 
 
 
-\## Tech Stack
+\## Technology Stack
 
 \- Java
 
@@ -32,27 +28,39 @@ Demo web application used for automation practice and framework demonstration.
 
 \- Maven
 
-\- IntelliJ IDEA
+\- Extent Reports
+
+\- GitHub
+
+\- Jenkins (CI-ready design)
 
 
 
-\## Framework Design and Architecture
+---
 
-\- Page Object Model (POM)
 
-\- Feature files written in Gherkin language
 
-\- Step Definitions for test implementation
+\## Framework Architecture
 
-\- Test Runner for execution control
+The framework follows a layered architecture to ensure maintainability, scalability, and reusability.
 
-\- Hooks for setup and teardown
 
-\- Externalized configuration using properties files
 
-\- Screenshot capture on failure
+\### Key Design Principles
 
-\- HTML execution reports
+\- \*\*BDD Separation\*\*: Feature files define behavior, step definitions implement logic, and page objects handle UI interactions.
+
+\- \*\*Centralized Driver Management\*\*: WebDriver lifecycle handled using DriverFactory and BaseTest.
+
+\- \*\*Configuration Driven Execution\*\*: Browser and environment values externalized using properties files.
+
+\- \*\*Reusable Utilities\*\*: Reporting, screenshots, waits, and configuration handled via utility classes.
+
+\- \*\*CI/CD Ready\*\*: Maven-based execution suitable for Jenkins pipelines.
+
+
+
+---
 
 
 
@@ -60,69 +68,129 @@ Demo web application used for automation practice and framework demonstration.
 
 src
 
-&nbsp;├── main/java
+├── main/java
 
-&nbsp;│   ├── base
+│ ├── base
 
-&nbsp;│   ├── pages
+│ │ ├── BaseTest.java
 
-&nbsp;│   └── utils
+│ │ └── DriverFactory.java
 
-&nbsp;└── test
+│ ├── config
 
-&nbsp;    ├── java
+│ │ └── ConfigReader.java
 
-&nbsp;    │   ├── hooks
+│ ├── pages
 
-&nbsp;    │   ├── runners
+│ └── utils
 
-&nbsp;    │   └── stepdefinitions
+│ ├── ExtentManager.java
 
-&nbsp;    └── resources
+│ ├── ScreenshotUtil.java
 
-&nbsp;        ├── features
+│
 
-&nbsp;        └── config.properties
+├── test/java
+
+│ ├── hooks
+
+│ │ └── Hooks.java
+
+│ ├── runners
+
+│ │ └── TestRunner.java
+
+│ └── stepdefinitions
+
+│
+
+└── test/resources
+
+├── features
+
+└── config.properties
 
 
 
-\## How to Run the Tests
+---
+
+
+
+\## Reporting and Failure Handling
+
+\- Extent Reports configured centrally using `ExtentManager`
+
+\- Scenario-level reporting via Cucumber Hooks
+
+\- Automatic screenshot capture on failure
+
+\- HTML reports generated under `target/`
+
+
+
+---
+
+
+
+\## How to Execute Tests
 
 
 
 \### Using Maven
 
+
+
 mvn clean test
+
+
 
 
 
 \### Using Test Runner
 
-\- Open TestRunner class
+\- Open `TestRunner.java`
 
-\- Right click and select Run
-
-
-
-\## Reports
-
-\- Cucumber HTML reports are generated after execution
-
-\- Scenario level and step level results available
-
-\- Screenshots captured for failed scenarios
+\- Right click → Run
 
 
 
-\## Key Highlights
+---
 
-\- BDD approach improves collaboration
 
-\- Reusable and maintainable automation framework
 
-\- Config driven execution
+\## CI/CD Integration
 
-\- Suitable for smoke and regression testing
+This framework is designed for CI execution:
+
+\- Maven-based execution
+
+\- Compatible with Jenkins pipelines
+
+\- Supports nightly regression execution
+
+\- Generates HTML reports for build validation
+
+
+
+---
+
+
+
+\## Real-World Use Case Alignment
+
+This framework mirrors automation practices used in enterprise insurance and financial domain applications, supporting:
+
+\- Regression testing
+
+\- Smoke testing
+
+\- CI-driven execution
+
+\- Maintainable long-term automation
+
+
+
+---
 
 
 
