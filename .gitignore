@@ -6,3 +6,18 @@
 .project
 .settings/
 
+# Maven
+target/
+
+# Test Reports
+test-output/
+
+# IDE
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# OS
+.DS_Store
