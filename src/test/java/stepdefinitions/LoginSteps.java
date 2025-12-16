@@ -4,7 +4,7 @@ import org.testng.Assert;
 import base.DriverFactory;
 import io.cucumber.java.en.*;
 import pages.LoginPage;
-import utils.ConfigReader;
+import config.ConfigReader;
 
 public class LoginSteps {
 

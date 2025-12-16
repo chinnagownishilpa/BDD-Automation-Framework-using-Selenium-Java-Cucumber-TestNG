@@ -3,7 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.*;
 import pages.CheckoutPage;
 import pages.LoginPage;
-import utils.ConfigReader;
+import config.ConfigReader;
 import base.DriverFactory;
 
 public class CheckoutSteps {

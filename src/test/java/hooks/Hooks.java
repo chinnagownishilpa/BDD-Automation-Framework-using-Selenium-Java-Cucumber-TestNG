@@ -1,18 +1,18 @@
 package hooks;
 
-import base.DriverFactory;
+import base.BaseTest;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-public class Hooks {
+public class Hooks extends BaseTest {
 
     @Before
-    public void launchBrowser() {
-        DriverFactory.getDriver();
+    public void setUp() {
+        setup();
     }
 
     @After
-    public void closeBrowser() {
-        DriverFactory.quitDriver();
+    public void tearDown() {
+        tearDown();
     }
 }
