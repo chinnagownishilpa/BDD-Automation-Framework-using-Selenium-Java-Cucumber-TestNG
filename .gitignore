@@ -2,3 +2,7 @@
 /test-output/
 *.log
 *.tmp
+.classpath
+.project
+.settings/
+
