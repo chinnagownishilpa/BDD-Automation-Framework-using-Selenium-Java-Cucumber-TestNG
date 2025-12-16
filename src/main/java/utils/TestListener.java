@@ -8,7 +8,7 @@ import com.aventstack.extentreports.ExtentReports;
 
 public class TestListener implements ITestListener {
 
-    private static ExtentReports extent = ExtentManager.getExtent();
+    private static ExtentReports extent = ExtentManager.getExtentReport();
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
     @Override
